@@ -1,0 +1,4 @@
+{
+"port":5000,
+"mongoUri": "mongodb+srv://sergey0703:s77778@mern.nfqhe.mongodb.net/mernapp?retryWrites=true&w=majority"
+}
