@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4b90e90-777b-43aa-9d48-e05e564db2ac" name="Default Changelist" comment="" />
+    <list default="true" id="b4b90e90-777b-43aa-9d48-e05e564db2ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/pages/AuthPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/CreatePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/DetailPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/LinksPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/default.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/default.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +25,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1lyMo1xwTGFCBIjKzyNUo6OZaC1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,7 +55,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608565049204</updated>
-      <workItem from="1608565050276" duration="5668000" />
+      <workItem from="1608565050276" duration="10428000" />
+      <workItem from="1608838899273" duration="23808000" />
     </task>
     <servers />
   </component>
@@ -52,5 +68,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="518" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608568887520" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608918150480">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1608918150480" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608914265972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608914265972" />
   </component>
 </project>
