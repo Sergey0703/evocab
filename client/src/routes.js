@@ -4,6 +4,7 @@ import {LinksPage} from './pages/LinksPage'
 import {CreatePage} from './pages/CreatePage'
 import {DetailPage} from "./pages/DetailPage";
 import {AuthPage} from "./pages/AuthPage";
+import {AboutPage} from "./pages/AboutPage";
 
 export const useRoutes=isAunthenticated=>{
           if(isAunthenticated){
@@ -17,6 +18,9 @@ export const useRoutes=isAunthenticated=>{
                      </Route>
                      <Route path="/detail/:id">
                       <DetailPage/>
+                      </Route>
+                      <Route path="/about">
+                          <AboutPage/>
                       </Route>
                       <Redirect to="/create" />
                   </Switch>
