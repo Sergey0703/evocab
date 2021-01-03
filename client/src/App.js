@@ -4,7 +4,7 @@ import {useRoutes} from './routes'
 import {useAuth} from './hooks/auth.hook'
 import {AuthContext} from './context/AuthContext'
 import {Navbar} from './components/Navbar'
-//import {Loader} from './components/Loader'
+import {Loader} from './components/Loader'
 //import 'materialize-css'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     const routes = useRoutes(isAuthenticated)
 
     if (!ready) {
-        //return <Loader />
+        return <Loader />
     }
 
     return (
@@ -23,7 +23,8 @@ function App() {
             <Router>
                 { isAuthenticated && <Navbar /> }
                 {/*<div className="container">*/}
-                   <main role="main" className="container">
+                
+                   <main role="main" className="container" style={{paddingTop: '2rem'}}>
                     {routes}
                    </main>
 

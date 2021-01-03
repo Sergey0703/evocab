@@ -3,7 +3,8 @@ import React from 'react'
 export const AboutPage =()=>{
     return (
         <div>
-            <p></p>
+             <br/>
+             <br/>
             <p>
                 About page</p>
 

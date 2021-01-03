@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b90e90-777b-43aa-9d48-e05e564db2ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/AboutPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/CreatePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/CreatePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/DetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/DetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,13 @@
       <option name="presentableId" value="Default" />
       <updated>1608565049204</updated>
       <workItem from="1608565050276" duration="10428000" />
-      <workItem from="1608838899273" duration="57380000" />
+      <workItem from="1608838899273" duration="61316000" />
+      <workItem from="1609601531699" duration="59000" />
+      <workItem from="1609602212511" duration="38000" />
+      <workItem from="1609602629352" duration="91000" />
+      <workItem from="1609606839057" duration="5000" />
+      <workItem from="1609613992353" duration="12000" />
+      <workItem from="1609614837088" duration="5000" />
     </task>
     <servers />
   </component>
