@@ -3,11 +3,11 @@ import {useHttp} from '../hooks/http.hook'
 import {AuthContext} from '../context/AuthContext'
 import {useHistory} from 'react-router-dom'
 
-export const CreatePage = () => {
+export const VocabPage = () => {
   const history = useHistory()
   const auth = useContext(AuthContext)
   const {request} = useHttp()
-  const [link, setLink] = useState('')
+  const [word, setWord] = useState('')
 
   useEffect(() => {
    // window.M.updateTextFields()
@@ -16,10 +16,10 @@ export const CreatePage = () => {
   const pressHandler = async event => {
     if (event.key === 'Enter') {
       try {
-        const data = await request('/api/link/generate', 'POST', {from: link}, {
+        const data = await request('/api/vocab/add', 'POST', {from: word}, {
           Authorization: `Bearer ${auth.token}`
         })
-        history.push(`/detail/${data.link._id}`)
+      //  history.push(`/detail/${data.word._id}`)
       } catch (e) {}
     }
   }
@@ -27,19 +27,18 @@ export const CreatePage = () => {
   return (
       
     <div className="row" style={{paddingTop: '2rem'}}>
-        <br/>
-      <br/>
+        
       <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
         <div className="input-field">
           <input
-            placeholder="Вставьте ссылку"
-            id="link"
+            placeholder="Вставьте слово"
+            id="word"
             type="text"
-            value={link}
-            onChange={e => setLink(e.target.value)}
+            value={word}
+            onChange={e => setWord(e.target.value)}
             onKeyPress={pressHandler}
           />
-          <label htmlFor="link">Введите ссылку</label>
+          <label htmlFor="word">Введите слово</label>
         </div>
       </div>
     </div>

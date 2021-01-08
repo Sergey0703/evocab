@@ -30,8 +30,8 @@ export const Navbar=()=>{
          <li className="nav-item "><NavLink className="nav-link" to="/create" exact>Create </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/" exact>Train words </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/trainwords2" exact>Train words2 </NavLink></li>
-         <li className="nav-item "><NavLink className="nav-link" to="/home" exact>Home </NavLink></li>
-         <li className="nav-item "><NavLink className="nav-link" to="/add" exact>Add </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/links" exact>Links </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/vocab" exact>Vocab </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/admin" exact>Admin </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/about" exact>About </NavLink></li>
          <li className="nav-item "><a href="/" onClick={logoutHandler} className="nav-link">Log out </a></li>

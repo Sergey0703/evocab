@@ -5,6 +5,8 @@ import {CreatePage} from './pages/CreatePage'
 import {DetailPage} from "./pages/DetailPage";
 import {AuthPage} from "./pages/AuthPage";
 import {AboutPage} from "./pages/AboutPage";
+import {VocabPage} from "./pages/VocabPage";
+import AdminPage from "./pages/AdminPage";
 
 export const useRoutes=isAunthenticated=>{
           if(isAunthenticated){
@@ -15,6 +17,12 @@ export const useRoutes=isAunthenticated=>{
                       </Route>
                       <Route path="/create" exact>
                       <CreatePage/>
+                     </Route>
+                     <Route path="/vocab" exact>
+                      <VocabPage/>
+                     </Route>
+                     <Route path="/admin" exact>
+                      <AdminPage/>
                      </Route>
                      <Route path="/detail/:id">
                       <DetailPage/>
