@@ -7,6 +7,7 @@ import {AuthPage} from "./pages/AuthPage";
 import {AboutPage} from "./pages/AboutPage";
 import {VocabPage} from "./pages/VocabPage";
 import AdminPage from "./pages/AdminPage";
+import {TrainWordsPage} from "./pages/TrainWordsPage";
 
 export const useRoutes=isAunthenticated=>{
           if(isAunthenticated){
@@ -14,6 +15,9 @@ export const useRoutes=isAunthenticated=>{
                   <Switch>
                       <Route path="/links" exact>
                       <LinksPage/>
+                      </Route>
+                      <Route path="/trainwords" exact>
+                      <TrainWordsPage/>
                       </Route>
                       <Route path="/create" exact>
                       <CreatePage/>
