@@ -16,6 +16,8 @@ import {WordCard} from '../components/WordCard'
 export const TrainWordsPage=()=>{
    
     const [word, setWord] = useState(null)
+    const [countAll,setCountAll]=useState(0)
+    const [countBad,setCountBad]=useState(0)
     const {loading, request} = useHttp()
     const {token} = useContext(AuthContext)
   
@@ -24,7 +26,9 @@ export const TrainWordsPage=()=>{
         const fetched = await request('/api/vocab', 'GET', null, {
           Authorization: `Bearer ${token}`
         })
-        setWord(fetched)
+        setWord(fetched[0])
+        setCountAll(fetched[1])
+        setCountBad(fetched[2])
       } catch (e) {}
     }, [token, request])
   
@@ -34,14 +38,16 @@ export const TrainWordsPage=()=>{
   
 
     const onStatus=useCallback(async (myword,wordStatus)=>{
-        
-            try {
+      //  const onStatus=async (myword,wordStatus)=>{  
+             try {
               const Ok = await request('/api/vocab/code', 'POST', {code:myword.code,status:wordStatus}, {
                 Authorization: `Bearer ${token}`
               })
              // setWord(fetched)
+             //console.log('after0')
             } catch (e) {}
-         }
+           fetchWord()
+         }, [token, request]
     )
 
     if (loading) {
@@ -53,7 +59,8 @@ export const TrainWordsPage=()=>{
     return (
         
       <div  style={{paddingTop: '2rem'}}>
-      { !loading && word && <WordCard word={word} onToggle={onStatus} /> }
+      { !loading && word && <WordCard word={word} onToggle={onStatus} countAll={countAll} countBad={countBad}/> }
+     <hr/>
      
     </div>
 

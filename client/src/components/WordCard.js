@@ -1,12 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
+import {WordSound} from '../components/WordSound'
 
-export const WordCard = ({ word,onToggle }) => {
+export const WordCard = ({ word,onToggle,countAll,countBad }) => {
+  const [showDiv,setShowDiv]=useState(false);
   return (
     <>
-      <h2>{word.word}</h2>
+       
+       Today {countAll} <span style={{color:'red'}}>Bad today {countBad} </span>
+      <h2><span className={word.train1?' circlegreen ':'circlered'} ></span>
+      {word.word}<WordSound word={word}/></h2>
+      {showDiv ? <div>{word.translate}</div> : null}
 
-      <p>Word: <a href={word.word} target="_blank" rel="noopener noreferrer">{word.translate}</a></p>
-      <p>Дата создания: <strong>{new Date(word.trainDate).toLocaleDateString()}</strong></p>
+<button id="button" onClick={() => setShowDiv(!showDiv)} className="btn btn-success">Show/Hide
+    Translate
+</button>
+      
+      <p>Дата тренировки: <strong>{new Date(word.trainDate).toLocaleDateString()}</strong></p>
       <button onClick={()=>onToggle(word,false)}>  Study</button>
       <button onClick={()=>onToggle(word,true)}>  I know</button>
     </>

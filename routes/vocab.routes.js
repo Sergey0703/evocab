@@ -98,14 +98,32 @@ router.post('/importcsv', auth, async (req, res) => {
 })
 
 
+/*const getWord=async (userId,res)=>{
+try {
+  const word = await Word.findOne({ owner: userId }).sort( {"trainDate" : 1} )
+  res.json(word)
+} catch (e) {
+  res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова3' })
+}
+}*/
 
 router.get('/', auth, async (req, res) => {
+  //getWord(req.user.userId,res)
   try {
     const word = await Word.findOne({ owner: req.user.userId }).sort( {"trainDate" : 1} )
-    res.json(word)
+    const _start = new Date();
+    _start.setHours(0,0,0,0);
+    const _end = new Date();
+    _end.setHours(23,59,59,999);
+    const wordAll = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).countDocuments()
+    const wordBad= await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end },train1:false }).countDocuments()
+  //  console.log('count',wordAll)
+    const ans=[word,wordAll,wordBad]
+
+    res.json(ans)
   } catch (e) {
-    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
-  }
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова0' })
+  } 
 })
 
 
@@ -116,8 +134,10 @@ router.post('/code', async (req, res) => {
 
     if (word) {
       word.train1=req.body.status
+      word.trainDate=new Date()
       await word.save()
       return res.json("Ok")
+      //getWord(req.body.user.userId,res)
       //return res.status(201).json("Ok")
       //return res.redirect(link.from)
     }
@@ -125,7 +145,7 @@ router.post('/code', async (req, res) => {
     res.status(404).json('Ссылка не найдена')
 
   } catch (e) {
-    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова4' })
   }
 })
 

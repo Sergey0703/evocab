@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.circlered:before {
+  content: ' \25CF';
+  font-size: 20px;
+  color: red;
+}
+.circlegreen:before {
+  content: ' \25CF';
+  font-size: 20px;
+  color: green;
+}
