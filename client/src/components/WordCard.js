@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {WordSound} from '../components/WordSound'
 
-export const WordCard = ({ word,onToggle,countAll,countBad }) => {
+export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
   const [showDiv,setShowDiv]=useState(false);
   return (
     <>
@@ -18,6 +18,9 @@ export const WordCard = ({ word,onToggle,countAll,countBad }) => {
       <p>Дата тренировки: <strong>{new Date(word.trainDate).toLocaleDateString()}</strong></p>
       <button onClick={()=>onToggle(word,false)}>  Study</button>
       <button onClick={()=>onToggle(word,true)}>  I know</button>
+      <hr/>
+      <button onClick={()=>onToggleNav(word,'prev')}>  Prev</button>
+      <button onClick={()=>onToggleNav(word,'next')}>  Next</button>
     </>
   )
 }

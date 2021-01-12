@@ -108,21 +108,37 @@ try {
 }*/
 
 router.get('/', auth, async (req, res) => {
-  //getWord(req.user.userId,res)
+ 
+  const nav=req.headers.nav;
+  const navWord=req.headers.navword;
+  let word;
+  let countPrev;
   try {
-    const word = await Word.findOne({ owner: req.user.userId }).sort( {"trainDate" : 1} )
+    if((nav=='null')&&(navWord=='null')){
+      console.log('1')
+     word = await Word.findOne({ owner: req.user.userId }).sort( {"trainDate" : 1} )
+   // console.log('word=',word)
+    }else{
+     
+       word = await Word.findOne({ owner: req.user.userId,trainDate: { $gt: navWord } }).sort( {"trainDate" : 1} ) 
+       countPrev = await Word.find({ owner: req.user.userId,trainDate: { $gt: navWord } }).sort( {"trainDate" : 1} ).countDocuments()
+       console.log('countPrev=',countPrev)
+      }
+    
     const _start = new Date();
     _start.setHours(0,0,0,0);
     const _end = new Date();
     _end.setHours(23,59,59,999);
     const wordAll = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).countDocuments()
     const wordBad= await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end },train1:false }).countDocuments()
-  //  console.log('count',wordAll)
+    console.log('count1',wordAll)
+    console.log('count2=',wordBad)
+    //const ans=[word,0,0]
     const ans=[word,wordAll,wordBad]
-
+    console.log('count02=',wordBad)
     res.json(ans)
   } catch (e) {
-    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова0' })
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова01' })
   } 
 })
 

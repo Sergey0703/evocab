@@ -21,10 +21,11 @@ export const TrainWordsPage=()=>{
     const {loading, request} = useHttp()
     const {token} = useContext(AuthContext)
   
-    const fetchWord = useCallback(async () => {
+    const fetchWord = useCallback(async (navWord, nav) => {
+        
       try {
         const fetched = await request('/api/vocab', 'GET', null, {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,nav:nav,navWord:navWord
         })
         setWord(fetched[0])
         setCountAll(fetched[1])
@@ -33,7 +34,7 @@ export const TrainWordsPage=()=>{
     }, [token, request])
   
     useEffect(() => {
-      fetchWord()
+      fetchWord(null,null)
     }, [fetchWord])
   
 
@@ -46,9 +47,15 @@ export const TrainWordsPage=()=>{
              // setWord(fetched)
              //console.log('after0')
             } catch (e) {}
-           fetchWord()
+           fetchWord(null,null)
          }, [token, request]
     )
+
+    const onNav=(myword,Nav)=>{
+        
+             fetchWord(myword.trainDate,Nav)
+          
+    }
 
     if (loading) {
       return <Loader/>
@@ -59,7 +66,7 @@ export const TrainWordsPage=()=>{
     return (
         
       <div  style={{paddingTop: '2rem'}}>
-      { !loading && word && <WordCard word={word} onToggle={onStatus} countAll={countAll} countBad={countBad}/> }
+      { !loading && word && <WordCard word={word} onToggle={onStatus} countAll={countAll} countBad={countBad} onToggleNav={onNav}/> }
      <hr/>
      
     </div>
