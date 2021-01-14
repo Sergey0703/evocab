@@ -106,6 +106,23 @@ try {
   res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова3' })
 }
 }*/
+router.get('/words', auth, async (req, res) => {
+  const _start = new Date();
+  _start.setHours(0,0,0,0);
+  const _end = new Date();
+  _end.setHours(23,59,59,999);
+try {
+  
+   words = await Word.find({ owner: req.user.userId }).sort( {"trainDate" : 1} )
+ // console.log('word=',word)
+  
+  const ans=words
+  res.json(ans)
+} catch (e) {
+  res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова01' })
+}
+
+})
 
 router.get('/', auth, async (req, res) => {
  
@@ -113,22 +130,37 @@ router.get('/', auth, async (req, res) => {
   const navWord=req.headers.navword;
   let word;
   let countPrev;
-  try {
-    if((nav=='null')&&(navWord=='null')){
-      console.log('1')
-     word = await Word.findOne({ owner: req.user.userId }).sort( {"trainDate" : 1} )
-   // console.log('word=',word)
-    }else{
-     
-       word = await Word.findOne({ owner: req.user.userId,trainDate: { $gt: navWord } }).sort( {"trainDate" : 1} ) 
-       countPrev = await Word.find({ owner: req.user.userId,trainDate: { $gt: navWord } }).sort( {"trainDate" : 1} ).countDocuments()
-       console.log('countPrev=',countPrev)
-      }
-    
-    const _start = new Date();
+  let countNext;
+  const _start = new Date();
     _start.setHours(0,0,0,0);
     const _end = new Date();
     _end.setHours(23,59,59,999);
+  try {
+    if((nav=='null')&&(navWord=='null')){
+      console.log('first')
+     word = await Word.findOne({ owner: req.user.userId }).sort( {"trainDate" : 1} )
+   // console.log('word=',word)
+    }else if((nav=='prev')&&(navWord!='null')){
+     
+       word = await Word.findOne({ owner: req.user.userId,trainDate: { $lt: navWord } }).sort( {"trainDate" : -1} )
+       if(word===null){
+        word = await Word.findOne({ owner: req.user.userId }).sort( {"trainDate" : -1} ) 
+       } 
+      // countPrev = await Word.find({ owner: req.user.userId,trainDate: { $gt: navWord } }).sort( {"trainDate" : -1} ).countDocuments()
+      // console.log('countPrev=',countPrev)
+      }
+
+      else if((nav=='next')&&(navWord!='null')){
+     
+        word = await Word.findOne({ owner: req.user.userId,trainDate: { $gt: navWord } }).sort( {"trainDate" : 1} ) 
+        if(word===null){
+        word = await Word.findOne({ owner: req.user.userId,trainDate: { $gte: navWord } }).sort( {"trainDate" : 1} ) 
+         } 
+       // countNext = await Word.find({ owner: req.user.userId,trainDate: { $lt: navWord } }).sort( {"trainDate" : 1} ).countDocuments()
+       // console.log('countNext=',countNext)
+       }
+    
+    
     const wordAll = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).countDocuments()
     const wordBad= await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end },train1:false }).countDocuments()
     console.log('count1',wordAll)

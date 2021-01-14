@@ -29,7 +29,7 @@ export const Navbar=()=>{
      <ul className="navbar-nav mr-auto"  >
          <li className="nav-item "><NavLink className="nav-link" to="/create" exact>Create </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/trainwords" exact>Train words </NavLink></li>
-         <li className="nav-item "><NavLink className="nav-link" to="/trainwords2" exact>Train words2 </NavLink></li>
+         <li className="nav-item "><NavLink className="nav-link" to="/trainsound" exact>Train sound </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/links" exact>Links </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/vocab" exact>Vocab </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/admin" exact>Admin </NavLink></li>

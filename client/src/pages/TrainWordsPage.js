@@ -24,7 +24,7 @@ export const TrainWordsPage=()=>{
     const fetchWord = useCallback(async (navWord, nav) => {
         
       try {
-        const fetched = await request('/api/vocab', 'GET', null, {
+        const fetched = await request('/api/vocab/', 'GET', null, {
           Authorization: `Bearer ${token}`,nav:nav,navWord:navWord
         })
         setWord(fetched[0])
