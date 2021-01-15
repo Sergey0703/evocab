@@ -1,6 +1,6 @@
 {
-"port":5000,
+"port":8080,
  "jwtSecret":"my mern",
 "mongoUri": "mongodb+srv://sergey0703:s77778@mern.nfqhe.mongodb.net/mernapp?retryWrites=true&w=majority",
-"baseUrl": "http://localhost:5000"
+"baseUrl": "https://8080-448990db-f6fd-43f3-8c74-11913e4687e2.europe-west4.cloudshell.dev"
 }
