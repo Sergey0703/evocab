@@ -30,7 +30,7 @@ export const useRoutes=isAunthenticated=>{
                      <Route path="/about">
                           <AboutPage/>
                       </Route>
-                      <Redirect to="/create" />
+                      <Redirect to="/trainwords" />
                   </Switch>
               )
           }
