@@ -113,7 +113,7 @@ router.get('/words', auth, async (req, res) => {
   _end.setHours(23,59,59,999);
 try {
   
-   words = await Word.find({ owner: req.user.userId }).sort( {"trainDate" : 1} )
+   words = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).sort( {"trainDate" : 1} )
  // console.log('word=',word)
   
   const ans=words

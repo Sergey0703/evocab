@@ -52,14 +52,10 @@ console.log('www=',words.length)
 
         { words.map((link, index) => {
         return (
-          <tr key={link._id}>
-            <td>{index + 1}</td>
-            <td>{link.word}</td>
-            <td>{link.trainDate}</td>
-            <td>
-              
-            </td>
-          </tr>
+         <>
+       &nbsp;<a href="">{link.word}</a>,
+            
+        </>   
         )
       }) }
      <hr/>
