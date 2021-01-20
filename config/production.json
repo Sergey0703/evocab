@@ -1,5 +1,5 @@
 {
-"port":80,
+"port":5000,
  "jwtSecret":"my mern",
 "mongoUri": "mongodb+srv://sergey0703:s77778@cluster0.1lssu.mongodb.net/cluster0?retryWrites=true&w=majority",
 "baseUrl": "https://evocab.herokuapp.com"
