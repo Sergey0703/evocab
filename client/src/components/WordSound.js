@@ -1,32 +1,41 @@
 import React, {useEffect,useState} from 'react';
 
-export const WordSound =({word})=>{
+export const WordSound =({sound})=>{
 
     let [wordAudio, setWordAudio]=useState();
     let [soundSrc,setSoundSrc]=useState();
-
+    let [wSound, setwSound]=useState();
+    //let
     useEffect(()=>{
-      console.log('WordSounduseEffect')
-        const sound = document.getElementById('wordsound');
-        wordAudio = document.getElementById('wordAudio');
-        sound.addEventListener('click', fPlay, false);
+     // console.log('WordSounduseEffect')
+        wordAudio=document.getElementById('wordAudio');
+        wSound=document.getElementById('wordsound');
+       
+        wSound.addEventListener('click', fPlay, false);
+        setwSound(wSound);
        // wordAudio=wordAudio.replace({'sound':''});
        setWordAudio (wordAudio);
-    soundSrc=word.sound.replace('sound','');
+      
+    soundSrc=sound.replace('sound','');
     soundSrc=soundSrc.replace('[','');
     soundSrc=soundSrc.replace(']','');
     soundSrc=soundSrc.replace(':','');
     setSoundSrc(soundSrc);
-    },[word]);
+    //let ChirpChirp = new Audio (soundSrc);
+    },[sound]);
 
     const fPlay=() =>{
-        console.log('fPlay',wordAudio)
-        wordAudio.play()
+        const ChirpChirp = new Audio (soundSrc);
+        ChirpChirp.play();
+        console.log('fplay',ChirpChirp)
+       // console.log('fPlay',wordAudio)
+       // console.log('sound',soundSrc)
+       // wordAudio.play()
     }
-console.log('before WordSound')
+//console.log('before WordSound')
 //<source src={ word.sound.replace({'sound:': ""}) } type="audio/mpeg"/>
     
-    //console.log('src=',soundSrc);
+    console.log('src=',soundSrc);
     return(
     <>
         
@@ -37,8 +46,8 @@ console.log('before WordSound')
             </audio>
         </span>
     
-        <span id="wordsound" style={{cursor:'pointer'}} onClick={fPlay}><img src="volume.png"/></span>
-    
+        <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src="volume.png"/></span>
+        
         </>
     )
 

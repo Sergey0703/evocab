@@ -6,7 +6,6 @@ import {AboutPage} from "./pages/AboutPage";
 import {VocabPage} from "./pages/VocabPage";
 import AdminPage from "./pages/AdminPage";
 import {TrainWordsPage} from "./pages/TrainWordsPage";
-import {TrainWordsPage2} from "./pages/TrainWordsPage2";
 import {TrainSoundPage} from "./pages/TrainSoundPage";
 
 export const useRoutes=isAunthenticated=>{
@@ -15,9 +14,6 @@ export const useRoutes=isAunthenticated=>{
                   <Switch>
                       <Route path="/trainwords" exact>
                       <TrainWordsPage/>
-                      </Route>
-                      <Route path="/trainwords2" exact>
-                      <TrainWordsPage2/>
                       </Route>
                       <Route path="/trainsound" exact>
                       <TrainSoundPage/>
