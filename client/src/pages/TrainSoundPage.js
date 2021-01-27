@@ -46,7 +46,7 @@ console.log('www=',words.length)
     
     return (
         
-      <div  style={{paddingTop: '2rem'}}>
+      <div >
         
 
 

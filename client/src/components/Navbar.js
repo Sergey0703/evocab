@@ -14,7 +14,7 @@ export const Navbar=()=>{
     history.push('/')
     }
     return(
-     <div>
+     
         <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
 
             <div className="myclass1">
@@ -38,7 +38,7 @@ export const Navbar=()=>{
      </ul>
             </div>
         </nav>
-</div>
+
     )
 }
 

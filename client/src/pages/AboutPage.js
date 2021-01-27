@@ -3,9 +3,7 @@ import React from 'react'
 export const AboutPage =()=>{
     return (
         <div>
-             <br/>
-             <br/>
-            <p>
+              <p>
                 About page</p>
 
         </div>

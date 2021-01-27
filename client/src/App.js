@@ -24,11 +24,11 @@ function App() {
                 { isAuthenticated && <Navbar /> }
                 {/*<div className="container">*/}
                 
-                   <main role="main" className="container" style={{paddingTop: '2rem'}}>
+                   <main role="main" className="container">
                     {routes}
                    </main>
 
-                {/* </div> */}
+                 {/*</div> */}
             </Router>
         </AuthContext.Provider>
     )

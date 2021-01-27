@@ -65,7 +65,7 @@ export const TrainWordsPage=()=>{
     
     return (
         
-      <div  style={{paddingTop: '2rem'}}>
+      <div  >
        {word && <WordCard word={word} onToggle={onStatus} countAll={countAll} countBad={countBad} onToggleNav={onNav}/>} 
      <hr/>
      <button onClick={()=>onStatus(word,false)}>  Study</button>

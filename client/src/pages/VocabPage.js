@@ -26,9 +26,9 @@ export const VocabPage = () => {
 
   return (
       
-    <div className="row" style={{paddingTop: '2rem'}}>
+    <div className="row">
         
-      <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
+      <div className="col s8 offset-s2">
         <div className="input-field">
           <input
             placeholder="Вставьте слово"
