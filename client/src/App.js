@@ -24,7 +24,7 @@ function App() {
                 { isAuthenticated && <Navbar /> }
                 {/*<div className="container">*/}
                 
-                   <main role="main" className="container">
+                   <main role="main" className="container" >
                     {routes}
                    </main>
 

@@ -39,17 +39,17 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
       <div>[{word.transcript}]</div>
       {showDiv ? <div>{word.translate}</div> : null}
       <div >
-      <button id="button" onClick={() => setShowDiv(!showDiv)} className="btn btn-success">Show/Hide
+      <button id="button" onClick={() => setShowDiv(!showDiv)} className="btn btn-info">Show/Hide
             Translate
         </button>
         </div>
        </mymaintranslate>
      <mymenu>
       <div>
-      <button onClick={()=>onToggle(word,false)} className={'btn-primary btn'}>  Study</button>
+      <button onClick={()=>onToggle(word,false)} className={'btn-danger btn'}>  Study</button>
        </div>
        <div>
-      <button onClick={()=>onToggle(word,true)} className={'btn-primary btn'}>  I know</button>
+      <button onClick={()=>onToggle(word,true)} className={'btn-success btn'}>  I know</button>
       </div>
 
       </mymenu>

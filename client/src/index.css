@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+.container{
+  margin-left: 10px;
+}
+
 .circlered:before {
   content: ' \25CF';
   font-size: 20px;
@@ -39,7 +43,7 @@ code {
   display: grid; 
   /*grid-template-columns: repeat(12, 1fr);*/
   grid-template-columns: minmax(150px, 180px) minmax(50px, 100px);
-  grid-template-rows: 50px 50px 150px 50px;
+  grid-template-rows: 50px auto 150px 50px;
  }
 
  myheader {
