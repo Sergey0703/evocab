@@ -23,3 +23,78 @@ code {
   font-size: 20px;
   color: green;
 }
+.padding-left-right {
+  padding-left: 0px;
+  padding-right: 5px;
+  font-size: 28px;
+  font-weight: 600;
+}
+.padding-height-weight {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /*max-width: 200px*/;
+  
+}
+.mycontainer {
+  display: grid; 
+  /*grid-template-columns: repeat(12, 1fr);*/
+  grid-template-columns: minmax(150px, 180px) minmax(50px, 100px);
+  grid-template-rows: 50px 50px 150px 50px;
+ }
+
+ myheader {
+  grid-column: span 2;
+}
+
+mymainword {
+  grid-column: span 2;
+}
+
+/*
+myfooter {
+  grid-column: span 2;
+}
+*/
+mymaintranslate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+mymenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 0 0;
+
+ }
+
+myfooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 0 0;
+
+ }
+/*
+.mycontainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+  padding: 1em;
+  box-sizing: border-box;
+}
+*/
+.mycontainer-cell {
+  width: 5em;
+  height: 2em;
+  background-color: blue;
+}
+
+div[class="row"] {
+  outline: 1px dotted rgba(0, 0, 0, 0.25);
+}
+
+div[class^="col-"] {
+  background-color: rgba(255, 0, 0, 0.2);
+  outline: 1px dotted rgba(0, 0, 0, 0.5);
+}

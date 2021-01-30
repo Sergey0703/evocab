@@ -22,21 +22,56 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
 
   return (
     <>
+   <div class="mycontainer">
+   <myheader>
+       <div>
+       Words today : <span className={'text-primary font-weight-bold'}>{countAll}</span></div> 
+       <div className={'text-danger font-weight-bold'}>Bad today : {countBad} </div>
        
-       Today {countAll} <span style={{color:'red'}}>Bad today {countBad} </span>
-      <h2><span className={word.train1?' circlegreen ':'circlered'} ></span>
-      {word.word}
-      <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src="volume.png"/></span>
-      </h2>
-      {showDiv ? <div>{word.translate}</div> : null}
-
-<button id="button" onClick={() => setShowDiv(!showDiv)} className="btn btn-success">Show/Hide
-    Translate
-</button>
+       </myheader>   
       
-      <p>Дата тренировки: <strong>{new Date(word.trainDate).toLocaleDateString()}</strong></p>
+       <mymainword >
+      <span className={word.train1?' circlegreen ':'circlered'} ></span>
+      <span className={'padding-left-right '}> {word.word}</span>
+      <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src="volume.png"/></span>
+      </mymainword>
+      <mymaintranslate>
+      <div>[{word.transcript}]</div>
+      {showDiv ? <div>{word.translate}</div> : null}
+      <div >
+      <button id="button" onClick={() => setShowDiv(!showDiv)} className="btn btn-success">Show/Hide
+            Translate
+        </button>
+        </div>
+       </mymaintranslate>
+     <mymenu>
+      <div>
+      <button onClick={()=>onToggle(word,false)} className={'btn-primary btn'}>  Study</button>
+       </div>
+       <div>
+      <button onClick={()=>onToggle(word,true)} className={'btn-primary btn'}>  I know</button>
+      </div>
+
+      </mymenu>
+     <myfooter>
+     
+      <span ><button onClick={()=>onToggleNav(word,'prev')} className={'btn-primary btn'}> {'<'} Prev </button></span>
+      <span ><button onClick={()=>onToggleNav(word,'next')} className={'btn-primary btn'}>  Next {'>'} </button></span>
+      
+      </myfooter>
+
      
       
+     
+      
+     
+      
+      
+      
+     
+    </div> {/*mycontainer*/}
+
+    {/*<p>Дата тренировки: <strong>{new Date(word.trainDate).toLocaleDateString()}</strong></p>*/}
     </>
   )
 }

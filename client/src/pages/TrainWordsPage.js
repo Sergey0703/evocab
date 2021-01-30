@@ -67,12 +67,9 @@ export const TrainWordsPage=()=>{
         
       <div  >
        {word && <WordCard word={word} onToggle={onStatus} countAll={countAll} countBad={countBad} onToggleNav={onNav}/>} 
-     <hr/>
-     <button onClick={()=>onStatus(word,false)}>  Study</button>
-      <button onClick={()=>onStatus(word,true)}>  I know</button>
-      <hr/>
-     <button onClick={()=>onNav(word,'prev')}>  Prev</button>
-      <button onClick={()=>onNav(word,'next')}>  Next</button>
+           
+     
+    
     </div>
 
         
