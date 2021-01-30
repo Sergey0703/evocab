@@ -36,7 +36,9 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
       <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src="volume.png"/></span>
       </mymainword>
       <mymaintranslate>
-      <div>[{word.transcript}]</div>
+      <div ><span className={'word-transcript'}>[{word.transcript}] </span>
+       {new Date(word.trainDate)>new Date('1970-01-01')?new Date(word.trainDate).toLocaleDateString():null}
+       </div>
       {showDiv ? <div>{word.translate}</div> : null}
       <div >
       <button id="button" onClick={() => setShowDiv(!showDiv)} className="btn btn-info">Show/Hide
@@ -59,15 +61,7 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
       <span ><button onClick={()=>onToggleNav(word,'next')} className={'btn-primary btn'}>  Next {'>'} </button></span>
       
       </myfooter>
-
-     
-      
-     
-      
-     
-      
-      
-      
+ 
      
     </div> {/*mycontainer*/}
 

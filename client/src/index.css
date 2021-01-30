@@ -39,6 +39,10 @@ code {
   /*max-width: 200px*/;
   
 }
+.word-transcript{
+  font-size: 22px;
+  font-weight: 400;
+}
 .mycontainer {
   display: grid; 
   /*grid-template-columns: repeat(12, 1fr);*/
@@ -88,11 +92,7 @@ myfooter {
   box-sizing: border-box;
 }
 */
-.mycontainer-cell {
-  width: 5em;
-  height: 2em;
-  background-color: blue;
-}
+
 
 div[class="row"] {
   outline: 1px dotted rgba(0, 0, 0, 0.25);
