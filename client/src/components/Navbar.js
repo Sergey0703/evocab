@@ -27,7 +27,6 @@ export const Navbar=()=>{
             </div>
             <div className="collapse navbar-collapse" id="navbarsExampleDefault">
      <ul className="navbar-nav mr-auto"  >
-         <li className="nav-item "><NavLink className="nav-link" to="/create" exact>Create </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/trainwords" exact>Train words </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/trainsound" exact>Train sound </NavLink></li>
          <li className="nav-item "><NavLink className="nav-link" to="/vocab" exact>Vocab </NavLink></li>

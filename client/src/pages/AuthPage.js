@@ -41,57 +41,59 @@ export const AuthPage = () => {
     return (
         <div >
             <div >
-                <h1>Сократи Ссылку</h1>
-                <div >
-                    <div >
-                        <span className="card-title">Авторизация</span>
+             
+                         
+                        <h2>Авторизация</h2>
+                      
                         <div>
 
-                            <div className="input-field">
+                        <div class="form-group">
+                        <label htmlFor="email">Email address</label>
                                 <input
                                     placeholder="Введите email"
                                     id="email"
                                     type="text"
                                     name="email"
-                                    className="yellow-input"
+                                    className="form-control"
                                     value={form.email}
                                     onChange={changeHandler}
                                 />
-                                <label htmlFor="email">Email</label>
-                            </div>
+                              </div>
 
-                            <div className="input-field">
+                              <div class="form-group">
+                              <label htmlFor="password">Password</label>
                                 <input
                                     placeholder="Введите пароль"
                                     id="password"
                                     type="password"
                                     name="password"
-                                    className="yellow-input"
+                                    className="form-control"
                                     value={form.password}
                                     onChange={changeHandler}
                                 />
-                                <label htmlFor="email">Пароль</label>
+                                
                             </div>
 
                         </div>
-                    </div>
+                    
                     <div className="card-action">
                         <button
-                            className="btn yellow darken-4"
-                            style={{marginRight: 10}}
-                            disabled={loading}
                             onClick={loginHandler}
+                            className="btn btn-success"
+                                                                                
                         >
+                             { /* disabled={loading} */ }
                             Войти
                         </button>
                         <button
                             onClick={registerHandler}
                             disabled={loading}
+                            className="btn btn-primary"
                         >
                             Регистрация
                         </button>
                     </div>
-                </div>
+              
             </div>
         </div>
     )

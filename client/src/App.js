@@ -21,14 +21,12 @@ function App() {
             token, login, logout, userId, isAuthenticated
         }}>
             <Router>
-                { isAuthenticated && <Navbar /> }
-                {/*<div className="container">*/}
-                
+                { /*isAuthenticated && <Navbar /> */}
+                    {<Navbar/>}         
                    <main role="main" className="container" >
                     {routes}
                    </main>
 
-                 {/*</div> */}
             </Router>
         </AuthContext.Provider>
     )

@@ -64,8 +64,7 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
  
      
     </div> {/*mycontainer*/}
-
-    {/*<p>Дата тренировки: <strong>{new Date(word.trainDate).toLocaleDateString()}</strong></p>*/}
+    
     </>
   )
 }

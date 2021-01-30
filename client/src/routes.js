@@ -18,10 +18,7 @@ export const useRoutes=isAunthenticated=>{
                       <Route path="/trainsound" exact>
                       <TrainSoundPage/>
                       </Route>
-                      <Route path="/create" exact>
-                      <CreatePage/>
-                     </Route>
-                     <Route path="/vocab" exact>
+                      <Route path="/vocab" exact>
                       <VocabPage/>
                      </Route>
                      <Route path="/admin" exact>
