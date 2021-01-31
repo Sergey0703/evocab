@@ -47,7 +47,7 @@ code {
   display: grid; 
   /*grid-template-columns: repeat(12, 1fr);*/
   grid-template-columns: minmax(150px, 180px) minmax(50px, 100px);
-  grid-template-rows: 50px auto 150px 50px;
+  grid-template-rows: 50px auto minmax(200px,max-content) 50px;
  }
 
  myheader {
