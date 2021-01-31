@@ -43,26 +43,42 @@ export const TrainSoundPage=()=>{
     }
 
 console.log('www=',words.length)
-    
+/*
+let wordsAfter=[];
+words.forEach(function (word) {
+ 
+  console.log(word.word);
+  let name=word.word.replace('<br>','');
+  push(task.name)
+   
+});
+*/
+const wordsStudy=words.filter(el=>el.train1===false);
+const wordsOk=words.filter(el=>el.train1===true);
+const mytrim=(word)=>{
+  let newword=word.replace('<br>','').trim();
+  //console.log('new=',newword)
+return newword;
+}
+console.log('www2=',wordsStudy.length)
     return (
         
       <div >
-        
+        { wordsStudy.map((link, index) => (
+       
+       <span><a href="">{mytrim(link.word)}</a>, </span>
+      )) }
 
+      <hr/>
 
-        { words.map((link, index) => {
-        return (
-         <>
-       &nbsp;<a href="">{link.word}</a>,
-            
-        </>   
-        )
-      }) }
-     <hr/>
      
+     { wordsOk.map((link, index) => (
+      
+      <span> <a href="">{mytrim(link.word)}</a> , </span>
+    
+     )) }
+    
+      
     </div>
-
-        
     )
-
 }

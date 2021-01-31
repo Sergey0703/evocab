@@ -61,11 +61,12 @@ router.post('/importcsv', auth, async (req, res) => {
      */
      const code = shortid.generate()
       const word = new Word({
-        code, word:d[0], 
+        code, 
+        word:d[0].trim(), 
         owner: req.user.userId, 
-        translate: d[1],
-        transcript: d[3],
-        sound: d[5],
+        translate: d[1].trim(),
+        transcript: d[3].trim(),
+        sound: d[5].trim(),
         train1: false
       })
   
@@ -113,7 +114,7 @@ router.get('/words', auth, async (req, res) => {
   _end.setHours(23,59,59,999);
 try {
   
-   words = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).sort( {"trainDate" : 1} )
+   words = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).sort( {train1:1,"trainDate" : 1} )
  // console.log('word=',word)
   
   const ans=words

@@ -26,7 +26,7 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
    <myheader>
        <div>
        Words today : <span className={'text-primary font-weight-bold'}>{countAll}</span></div> 
-       <div className={'text-danger font-weight-bold'}>Bad today : {countBad} </div>
+       <div className={'text-danger font-weight-bold'}><a href="trainsound">Bad today : {countBad} </a></div>
        
        </myheader>   
       

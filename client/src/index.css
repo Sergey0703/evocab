@@ -58,6 +58,10 @@ mymainword {
   grid-column: span 2;
 }
 
+.container-my {
+  @extend .container;
+  max-width: 600px;   
+}
 /*
 myfooter {
   grid-column: span 2;
