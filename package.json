@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start:server": "cd api && yarn start",
     "no2-build": "npm install --prefix client && npm run build --prefix client ",
-    "now-build": "cd client && react-scripts build && mv build ../dist",
+    "now-build": "cd client && npm install && react-scripts build && mv build ../dist",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "",
