@@ -2,14 +2,15 @@
   "name": "mern",
   "version": "1.0.0",
   "description": "mern",
-  "main": "app.js",
+  "main": "api/app.js",
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
+    "start": "node api/app.js",
+    "server": "nodemon api/app.js",
     "client": "npm run start --prefix client",
     "client:install": "npm install --prefix client",
     "client:build": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "now-build": "cd client && react-scripts build && mv build ../dist",  
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "",
