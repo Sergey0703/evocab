@@ -11,7 +11,7 @@
     "client:build": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start:server": "cd api && yarn start",
-    "now-build": "cd client && npm run build --prefix client && mv build ../dist",  
+    "now-build": "npm run build --prefix client && mv build ../dist",  
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "",
