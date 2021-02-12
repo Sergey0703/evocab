@@ -1,5 +1,5 @@
 const express = require('express')
-process.env.NODE_CONFIG_DIR = 'api/config'
+//process.env.NODE_CONFIG_DIR = 'api/config'
 const config = require('config')
 
 const path = require('path')
@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({ limit: '4mb', extended: true, parameterLimit: 10
 //app.use(express.json({limit: '4mb'}));
 //app.use(express.urlencoded({limit: '4mb'}));
 
-app.use('/api/auth', require('../routes/auth.routes'))
+app.use('/api/auth', require('./routes/auth.routes'))
 //app.use('/api/link', require('./routes/link.routes'))
-app.use('/api/vocab', require('../routes/vocab.routes'))
-app.use('/t', require('../routes/redirect.routes'))
+app.use('/api/vocab', require('./routes/vocab.routes'))
+app.use('/t', require('./routes/redirect.routes'))
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')))
