@@ -1,6 +1,8 @@
 const {Router} = require('express')
 const bcrypt = require('bcryptjs')
 const config = require('config')
+//let jwtSecret=config.get('jwtSecret');
+let jwtSecret="my mern";
 const jwt = require('jsonwebtoken')
 const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
