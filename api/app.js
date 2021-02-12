@@ -1,5 +1,5 @@
 const express = require('express')
-process.env.NODE_CONFIG_DIR = './config'
+process.env.NODE_CONFIG_DIR = 'api/config'
 const config = require('config')
 
 const path = require('path')
