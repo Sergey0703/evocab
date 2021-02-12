@@ -1,8 +1,8 @@
 const express = require('express')
 //process.env.NODE_CONFIG_DIR = 'api/config'
 const config = require('config')
-let mong=config.get('mongoUri');
-mong="mongodb+srv://sergey0703:s77778@cluster0.1lssu.mongodb.net/cluster0?retryWrites=true&w=majority";
+//let mong=config.get('mongoUri');
+let mong="mongodb+srv://sergey0703:s77778@cluster0.1lssu.mongodb.net/cluster0?retryWrites=true&w=majority";
 const path = require('path')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
