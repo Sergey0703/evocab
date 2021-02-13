@@ -33,7 +33,7 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
        <mymainword >
       <span className={word.train1?' circlegreen ':'circlered'} ></span>
       <span className={'padding-left-right '}> {word.word}</span>
-      <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src="volume.png"/></span>
+      <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src="/volume.png"/></span>
       </mymainword>
       <mymaintranslate>
       <div ><span className={'word-transcript'}>[{word.transcript}] </span>
