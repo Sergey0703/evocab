@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import {WordSound} from './WordSound'
-import imgSound from './volume.png';
+import volume from './volume.png';
 
 export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
   const [showDiv,setShowDiv]=useState(false);
@@ -34,7 +34,7 @@ export const WordCard = ({ word,onToggle,countAll,countBad,onToggleNav }) => {
        <mymainword >
       <span className={word.train1?' circlegreen ':'circlered'} ></span>
       <span className={'padding-left-right '}> {word.word}</span>
-      <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src={imgSound}/></span>
+      <span id="wordsound" style={{cursor:'pointer'}} onClick={()=>fPlay()}><img src={volume}/></span>
       </mymainword>
       <mymaintranslate>
       <div ><span className={'word-transcript'}>[{word.transcript}] </span>
