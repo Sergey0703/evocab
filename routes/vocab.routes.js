@@ -47,8 +47,12 @@ router.post('/importcsv', auth, async (req, res) => {
     for (var i=0, len=from.length; i<len; i++) {
       var d=from[i];
       console.log('d=',d[0])
-
-   
+      if (!d[3]) {
+        d[3]="";
+      }
+      if (!d[5]) {
+        d[5]="";
+      }
       //console.log('enword=',from)
       /*
       const existing = await Word.findOne({ from })
