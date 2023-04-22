@@ -167,7 +167,8 @@ router.get('/', auth, async (req, res) => {
     
     
     const wordAll = await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end } }).countDocuments()
-    const wordBad= await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end },train1:false }).countDocuments()
+    //const wordBad= await Word.find({ owner: req.user.userId,trainDate: { $gte: _start, $lte: _end },train1:false }).countDocuments()
+    const wordBad= await Word.find({ trainDate: { $gte: _start, $lte: _end },train1:false }).countDocuments()
     console.log('count1',wordAll)
     console.log('count2=',wordBad)
     //const ans=[word,0,0]
