@@ -3,7 +3,7 @@
   "public": true,
   "builds": [
     { "src": "package.json", "use": "@now/static-build" },
-    { "src": "/api/app.js", "use": "@now/node-server" }
+    { "src": "/api/app.js", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/.*", "dest": "/api/app.js" },
